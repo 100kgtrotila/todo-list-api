@@ -12,5 +12,5 @@ class User(Base):
     password = Column(String)
     name = Column(String)
 
-    todos = relationship("Todo", back_populates="owner")
+    todos = relationship("app.modules.todos.models.Todo", back_populates="owner")
 
