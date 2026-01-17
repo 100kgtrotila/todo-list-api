@@ -21,3 +21,6 @@ class UserRepository:
         db.refresh(db_user)
 
         return db_user
+
+    def get_user_by_id(self, db: Session, id: int):
+        return db.query(User).filter(User.id == id).first()

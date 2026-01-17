@@ -1,27 +1,24 @@
-# --- Python (Сміття) ---
+# --- Python Artifacts ---
 __pycache__/
 *.py[cod]
 *$py.class
 
-# --- Virtual Environment (Твоя папка з бібліотеками) ---
-# Ми не заливаємо бібліотеки, бо є requirements.txt
+# --- Virtual Environment ---
 .venv/
 venv/
 env/
 
-# --- Environment Variables (СЕКРЕТИ) ---
-# Це найважливіший рядок! Ніколи не заливай паролі.
+# --- Environment Variables (SECRETS) ---
+# CRITICAL: Never commit secrets to the repo
 .env
 .env.prod
 .env.test
 
-# --- IDE (Налаштування PyCharm та VS Code) ---
-# Це твої особисті налаштування редактора, іншим вони не треба
+# --- IDE Settings ---
 .idea/
 .vscode/
 
 # --- Database ---
-# Якщо раптом створиш локальну базу SQLite, щоб вона не полетіла в репо
 *.sqlite3
 *.db
 
@@ -33,6 +30,6 @@ env/
 .mypy_cache/
 htmlcov/
 
-# --- System Files (Mac/Windows сміття) ---
+# --- System Files ---
 .DS_Store
 Thumbs.db
