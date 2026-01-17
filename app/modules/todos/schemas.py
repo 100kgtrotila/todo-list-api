@@ -11,7 +11,7 @@ class CreateTodo(TodoBase):
     pass
 
 class UpdateTodo(TodoBase):
-    title = Optional[str]
+    title: Optional[str]
     description: Optional[str] = None
 
 class TodoResponse(TodoBase):

@@ -21,3 +21,23 @@ class TodoRepository:
 
     def get_todos_by_user(self, db: Session, user_id: int):
         return db.query(Todo).filter(Todo.owner_id == user_id).all()
+
+    def delete_todo(self, db: Session, todo_id: int, user_id: int):
+        todo = db.query(Todo).filter(Todo.id == todo_id, Todo.owner_id == user_id).first()
+        if todo:
+            db.delete(todo)
+            db.commit()
+            return True
+        return False
+
+    def update_todo(self, db: Session, update_data: dict ,todo_id: int, user_id: int):
+        todo = db.query(Todo).filter(Todo.id == todo_id, Todo.owner_id == user_id).first()
+        if not todo:
+            return None
+
+        for key, value in update_data.items():
+            setattr(todo, key, value)
+
+        db.commit()
+        db.refresh(todo)
+        return todo
